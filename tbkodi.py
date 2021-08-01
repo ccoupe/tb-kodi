@@ -57,6 +57,5 @@ def main():
 
 if __name__ == '__main__':
   #kodi.Player.Open(item={"file": "rtsp://ccoupe:tssgnu@192.168.1.28/live"})
-
   sys.exit(main())
 
