@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/pi/tbkodi
+cd /home/ccoupe/tbkodi
 /usr/bin/python3 tbkodi.py 

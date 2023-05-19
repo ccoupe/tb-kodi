@@ -8,7 +8,7 @@ import paho.mqtt.client as mqtt
 from kodijson import Kodi, PLAYER_VIDEO
 
 #Login with my credentials
-kodi = Kodi("http://kodi.local:8080/jsonrpc","kodi","tssgnu")
+kodi = Kodi("http://kodi.local:8080/jsonrpc","ccoupe","tssgnu")
 #print(kodi.JSONRPC.Ping())
 
 listen_on = 'homie/kodi_tracker/track/control/set'
