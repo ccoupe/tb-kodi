@@ -4,7 +4,7 @@ After=network-online.target
 Wants=network-online.target
 
 [Service]
-ExecStart=/home/ccoupe/tbkodi/tbkodi.sh
+ExecStart=/usr/local/lib/kodi-track/kodi-track.sh
 Restart=on-abort
 
 [Install]
