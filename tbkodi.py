@@ -12,8 +12,8 @@ import random
 kodi = Kodi("http://asahi.local:8080/jsonrpc","ccoupe","tssgnu")
 #print(kodi.JSONRPC.Ping())
 
-listen_on = 'homie/kodi_tracker/track/control/set'
-respond_on = 'homie/kodi_tracker/track/control'
+listen_on = 'homie/whodo/doorbell/cmd/set'
+respond_on = 'homie/whodo/doorbell/cmd
 
 def on_message(client, userdata, message):
   global listen_on, log, kodi

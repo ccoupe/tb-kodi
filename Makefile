@@ -4,19 +4,20 @@ DESTDIR=/usr/local/lib/$(PRJ)
 SRCDIR=$(HOME)/Projects/iot/kodi
 LAUNCH=$(PRJ).sh
 SERVICE=$(PRJ).service
-PYENV ?= ${DESTDIR}/kd-env
+PYENV ?= ${DESTDIR}/.venv
+PYVER ?= 3.11
 
 NODE := $(shell hostname)
 SHELL := /bin/bash 
 
-${PYENV}:
-	sudo mkdir -p ${PYENV}
-	sudo chown ${USER} ${PYENV}
-	python3 -m venv ${PYENV}
+${PYENV}: ${SRCDIR}/requirements.txt
+	sudo mkdir -p ${DESTDIR}
+	sudo chown ${USER} ${DESTDIR}
+	uv venv --python ${PYVER} --no-project ${PYENV}
 	( \
 	set -e ;\
-	source ${PYENV}/bin/activate; \
-	pip install -r $(SRCDIR)/requirements.txt; \
+	source ${PYENV}/bin/activate ; \
+	uv pip install -r $(SRCDIR)/requirements.txt ; \
 	)
 
 setup_launch:
