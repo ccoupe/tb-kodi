@@ -1,5 +1,6 @@
 #!/bin/bash
+node=`hostname`
 nm-online
 cd /usr/local/lib/kodi-track
 source PYENV/bin/activate
-/usr/bin/python3 tbkodi.py 
+python3 tbkodi.py -c ${node}.json

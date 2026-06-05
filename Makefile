@@ -28,9 +28,9 @@ setup_launch:
 setup_dir:
 	sudo mkdir -p ${DESTDIR}
 	sudo mkdir -p ${DESTDIR}/lib	
-	sudo cp -a ${SRCDIR}/Makefile ${DESTDIR}
-	sudo cp -a ${SRCDIR}/requirements.txt ${DESTDIR}
-	sudo cp -a ${SRCDIR}/${SERVICE} ${DESTDIR}
+	sudo cp ${SRCDIR}/Makefile ${DESTDIR}
+	sudo cp ${SRCDIR}/requirements.txt ${DESTDIR}
+	sudo cp ${SRCDIR}/${SERVICE} ${DESTDIR}
 	sudo chown -R ${USER} ${DESTDIR}
 	sed  s!PYENV!${PYENV}! <${SRCDIR}/launch.sh >$(DESTDIR)/$(LAUNCH)
 	sudo chmod +x ${DESTDIR}/${LAUNCH}
@@ -38,6 +38,9 @@ setup_dir:
 	
 update: 
 	cp ${SRCDIR}/tbkodi.py ${DESTDIR}
+	cp ${SRCDIR}/Settings.py ${DESTDIR}
+	cp ${SRCDIR}/*.json ${DESTDIR}
+	cp ${SRCDIR}/wake_wayland.sh ${DESTDIR}
 
 install: ${PYENV} setup_dir update setup_launch
 

@@ -1,0 +1,11 @@
+{
+    "mqtt_server_ip": "192.168.1.2" ,
+    "mqtt_port": 1883,
+    "mqtt_client_name": "tbkodi_1",
+    "homie_device": "",
+    "homie_name": "",
+    "cmd_topic": "homie/whodo/display/cmd/set",
+    "sligger": "/usr/local/lib/sliger",
+    "pause_for": 10,
+    "video_cmd": "ffplay"
+}
